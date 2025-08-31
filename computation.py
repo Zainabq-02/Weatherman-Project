@@ -1,5 +1,3 @@
-# computation.py
-
 def get_yearly_summary(readings, year):
     yearly = [r for r in readings if r.reading_date.year == year]
 
