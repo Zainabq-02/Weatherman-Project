@@ -30,4 +30,21 @@ def read_data(folder_path, year=None):
                     reading_date = datetime.strptime(parts[0], "%Y-%m-%d").date()
 
                     # Only convert if value exists
-                    max_temp = int(parts[1]) if part_
+                    max_temp = int(parts[1]) if parts[1] else None
+                    min_temp = int(parts[2]) if parts[2] else None
+                    mean_temp = int(parts[3]) if parts[3] else None
+                    humidity = int(parts[4]) if parts[4] else None
+
+                    if year is None or reading_date.year == year:
+                        readings.append(
+                            WeatherReading(
+                                station=station,
+                                reading_date=reading_date,
+                                max_temp=max_temp,
+                                min_temp=min_temp,
+                                mean_temp=mean_temp,
+                                humidity=humidity
+                            )
+                        )
+
+    return readings
