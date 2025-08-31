@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# PyCharm
+.idea/
+*.iml
+
+# Data files
+data/weather-files/
